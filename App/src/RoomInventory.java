@@ -69,3 +69,14 @@ public class RoomInventory {
         roomAvailability.put(roomType, count);
     }
 }
+
+/** Removes one room of the given type from inventory. */
+public void removeRoom(String roomType) {
+    // iterate and remove first match
+    for (Room room : rooms) {
+        if (room.getRoomType().equals(roomType)) {
+            rooms.remove(room);
+            return;
+        }
+    }
+}
